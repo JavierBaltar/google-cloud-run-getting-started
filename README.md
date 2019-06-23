@@ -34,7 +34,7 @@ FROM node:10
 
 You can visit the AWX REST API in a web browser at http://<AWX Server IP>/api/ as shown below:
   
-![](/screenshots/EB-docker-app.png)
+![](/screenshots/cloud-run-create-service.png)
 
 
 
@@ -66,6 +66,9 @@ Google Cloud container registry
 Before you can push or pull images, you must configure Docker to use the gcloud command-line tool to authenticate requests to Container Registry. To do so, run the following command (you are only required to do this once):
 gcloud auth configure-docker
 
+
+![](/screenshots/gcloud-auth.png)
+
 ## Build a docker image
 Create a directory to store your docker image files.
 mkdir helloworld-nodejs && cd helloworkd-nodejs
@@ -84,6 +87,8 @@ index.js  Expand source
 
 Let's build the image:
 docker build -t quickstart-image .
+
+![](/screenshots/docker-build.png)
 
 docker build output  Expand source
 
@@ -109,8 +114,11 @@ Enable the container registry API
 To push the Docker image, run the following command:
 docker push gcr.io/[PROJECT-ID]/quickstart-image:tag
 
+![](/screenshots/docker-image-push.png)
 
 The image is added to your Container Registry. 
+
+![](/screenshots/docker-image-container-registry.png)
 
 Pull docker images
 To pull the image from Container Registry onto your local machine, run the following command:
@@ -120,11 +128,11 @@ Google Cloud Run provides a platform to quickly run and test your containers wit
 
 
 Go to Cloud Run console and click on Create Service:
-
+![](/screenshots/cloud-run-service.png)
 
 Choose the container image you have just created above and select a service name and location (at the moment of writing, only us-central1 is supported). 
 Click on Create.
-
+![](/screenshots/cloud-run-create-service.png)
 
 
 In few seconds, your service is ready and the public access URL is available. 
@@ -172,6 +180,7 @@ NOTE: You can also tag your image before pushing: docker tag IMAGE_NAME YOUR_DOC
 
 Pushing images to Dockerhub follows the same procedure completed for Google Cloud Container Registry.
 
+![](/screenshots/docker-push.png)
 
 Your image is pushed to the repository.
 
@@ -197,6 +206,7 @@ Fill in the environment information by choosing a domain. Under base configurati
 
 You have to tell Elasticbeanstalk where your application code is stored. In this case, we are creating a file which points to the Docker Hub repository image:
 
+![](/screenshots/docker-run-json.png)
 
 Upload the file described above. Click on Create environment. 
 
