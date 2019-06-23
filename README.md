@@ -113,7 +113,7 @@ The image is added to your Container Registry.
 
 ## Pull Docker images
 To pull the image from Container Registry onto your local machine, run the following command:
-docker pull gcr.io/[PROJECT-ID]/quickstart-image:tag
+```docker pull gcr.io/[PROJECT-ID]/quickstart-image:tag```
 
 
 ## Running Docker containers on Cloud Run
@@ -136,7 +136,7 @@ Click on the URL and check that the application is working fine.
 
 ## Delete Docker images
 To avoid incurring charges to your GCP account for the resources used, run the following command to delete the Docker image from Container Registry.
-gcloud container images delete gcr.io/[PROJECT-ID]/quickstart-image:tag --force-delete-tags
+```gcloud container images delete gcr.io/[PROJECT-ID]/quickstart-image:tag --force-delete-tags```
 
 
 
@@ -157,11 +157,6 @@ In this demo, we will be focussing on AWS Elasticbeanstalk.
 Docker Hub
 Dockerhub is a public Docker images repository: https://hub.docker.com 
 You can create your own registry and start sharing Docker images. 
-
-
-In this screenshot, I have created a new repository called "docker-demo".
-
-
 
 Before start using docker, you have to login entering your credentials.
 
