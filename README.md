@@ -31,15 +31,6 @@ Let's use the Dockerfile from the demo below.
 We start with specifying our base image. Use the FROM keyword to do that. In this case, the Node.js version 10 base image. 
 FROM node:10
 
-
-You can visit the AWX REST API in a web browser at http://<AWX Server IP>/api/ as shown below:
-  
-![](/screenshots/cloud-run-create-service.png)
-
-
-
-
-
 The next step usually is to write the commands of copying the files and installing the dependencies.
 ```bash
 # Create and change to the app directory.
@@ -106,7 +97,7 @@ tag is a tag you're adding to the Docker image. If you didn't specify a tag, Doc
 
 
 You are now ready to push the image to Container Registry.
-Push docker images
+## Push docker images
 Once docker has been configured to use gcloud as a credential helper, and the local image is tagged with the registry name, you can push it to Container Registry.
 Enable the container registry API
 
@@ -120,10 +111,12 @@ The image is added to your Container Registry.
 
 ![](/screenshots/docker-image-container-registry.png)
 
-Pull docker images
+## Pull docker images
 To pull the image from Container Registry onto your local machine, run the following command:
 docker pull gcr.io/[PROJECT-ID]/quickstart-image:tag
-Running docker images
+
+
+## Running docker images
 Google Cloud Run provides a platform to quickly run and test your containers without much concern about configuring the infrastructure. 
 
 
@@ -141,7 +134,7 @@ In few seconds, your service is ready and the public access URL is available.
 Click on the URL and check that the application is working fine. 
 
 
-Delete docker images
+## Delete docker images
 To avoid incurring charges to your GCP account for the resources used, run the following command to delete the Docker image from Container Registry.
 gcloud container images delete gcr.io/[PROJECT-ID]/quickstart-image:tag --force-delete-tags
 
