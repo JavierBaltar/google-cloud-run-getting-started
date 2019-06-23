@@ -2,11 +2,13 @@
 <p align="center">
   <a href="#Introduction">Introduction</a> •
   <a href="#Terminology">Terminology</a> •
-  <a href="#API">API</a> •
-  <a href="#Notifications">Notifications</a> •
-  <a href="#Docker-Security">Docker Security</a> •
-  <a href="#related">Related</a> •
-  <a href="#Authors">Authors</a>
+  <a href="#Build-a-docker-image">Build a Docker image</a> •
+  <a href="#Push-Docker-images">Push Docker images</a> •
+  <a href="#Pull-Docker-images">Pull Docker images</a> •
+  <a href="#Running-Docker-containers-on-Cloud-Run">Running Docker on Cloud Run</a> •
+  <a href="#Delete-Docker-images">Delete Docker images</a> •
+  <a href="#Docker-on-AWS">Docker on AWS</a>
+  
 </p>
 
 ## Introduction
@@ -97,7 +99,7 @@ tag is a tag you're adding to the Docker image. If you didn't specify a tag, Doc
 
 
 You are now ready to push the image to Container Registry.
-## Push docker images
+## Push Docker images
 Once docker has been configured to use gcloud as a credential helper, and the local image is tagged with the registry name, you can push it to Container Registry.
 Enable the container registry API
 
@@ -111,12 +113,12 @@ The image is added to your Container Registry.
 
 ![](/screenshots/docker-image-container-registry.png)
 
-## Pull docker images
+## Pull Docker images
 To pull the image from Container Registry onto your local machine, run the following command:
 docker pull gcr.io/[PROJECT-ID]/quickstart-image:tag
 
 
-## Running docker images
+## Running Docker containers on Cloud Run
 Google Cloud Run provides a platform to quickly run and test your containers without much concern about configuring the infrastructure. 
 
 
@@ -134,7 +136,7 @@ In few seconds, your service is ready and the public access URL is available.
 Click on the URL and check that the application is working fine. 
 
 
-## Delete docker images
+## Delete Docker images
 To avoid incurring charges to your GCP account for the resources used, run the following command to delete the Docker image from Container Registry.
 gcloud container images delete gcr.io/[PROJECT-ID]/quickstart-image:tag --force-delete-tags
 
