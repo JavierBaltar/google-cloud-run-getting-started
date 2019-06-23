@@ -31,7 +31,17 @@ Let's use the Dockerfile from the demo below.
 We start with specifying our base image. Use the FROM keyword to do that. In this case, the Node.js version 10 base image. 
 FROM node:10
 
+
+You can visit the AWX REST API in a web browser at http://<AWX Server IP>/api/ as shown below:
+  
+![](awx-api.png)
+
+
+
+
+
 The next step usually is to write the commands of copying the files and installing the dependencies.
+```bash
 # Create and change to the app directory.
 WORKDIR /usr/src/app
 
@@ -49,6 +59,7 @@ COPY . .
 The last step is to write the command for running the application. We use the CMD command to do that: 
 # Run the web service on container startup.
 CMD [ "npm", "start" ]
+```
 
 The primary purpose of CMD is to tell the container which command it should run when it is started. With that, our Dockerfile is now ready.  
 Google Cloud container registry
