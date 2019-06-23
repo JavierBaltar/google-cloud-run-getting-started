@@ -66,29 +66,28 @@ gcloud auth configure-docker
 Create a directory to store your docker image files.
 mkdir helloworld-nodejs && cd helloworkd-nodejs
 
-To containerize the sample app, create a new file named Dockerfile in the same directory as the source files, and copy the following content:
-Dockerfile  Expand source
+To containerize the sample app, create a new file named Dockerfile in the same directory as the source files, and copy the following content.
 
 The dockerignore file contains files which are not build in order to avoid interfering the image.
-.dockeringore  Expand source
+
 
 The package.json file contains Nodejs specifications. 
-package.json  Expand source
 
-This code creates a basic web server which listens on port defined by PORT environment variable. 
-index.js  Expand source
+
+The index.js code creates a basic web server which listens on port defined by PORT environment variable. 
+
 
 Let's build the image:
-docker build -t quickstart-image .
+```docker build -t quickstart-image . ```
 
 ![](/screenshots/docker-build.png)
 
-docker build output  Expand source
+
 
 Before you push the Docker image to Container Registry, you need to tag it with its registry name. Tagging the Docker image with a registry name configures the docker push command to push the image to a specific location. For this quickstart, the host location is gcr.io.
 To tag the Docker image, run the following command:
 
-docker tag quickstart-image gcr.io/[PROJECT-ID]/quickstart-image:tag
+```docker tag quickstart-image gcr.io/[PROJECT-ID]/quickstart-image:tag ```
 
 where:
 [PROJECT-ID] is your Google Cloud Platform Console project ID, which you need to add to your command.
@@ -97,15 +96,14 @@ quickstart-image is the name of the Docker image
 tag is a tag you're adding to the Docker image. If you didn't specify a tag, Docker will apply the default tag latest.
 
 
-
 You are now ready to push the image to Container Registry.
 ## Push Docker images
 Once docker has been configured to use gcloud as a credential helper, and the local image is tagged with the registry name, you can push it to Container Registry.
-Enable the container registry API
+Enable the container registry API.
 
 
 To push the Docker image, run the following command:
-docker push gcr.io/[PROJECT-ID]/quickstart-image:tag
+```docker push gcr.io/[PROJECT-ID]/quickstart-image:tag```
 
 ![](/screenshots/docker-image-push.png)
 
@@ -143,7 +141,7 @@ gcloud container images delete gcr.io/[PROJECT-ID]/quickstart-image:tag --force-
 
 
 You can delete your images from the docker cli locally. First, list your images:
-docker image ls --all
+```docker image ls --all```
 
 
 Choose an image and remove it performing the command below specifying the image id: 
