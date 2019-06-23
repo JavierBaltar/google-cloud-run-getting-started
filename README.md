@@ -34,7 +34,7 @@ FROM node:10
 
 You can visit the AWX REST API in a web browser at http://<AWX Server IP>/api/ as shown below:
   
-![](awx-api.png)
+![](/screenshots/EB-docker-app.png)
 
 
 
