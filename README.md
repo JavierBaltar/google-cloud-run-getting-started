@@ -1,13 +1,21 @@
 # google-cloud-run-getting-started
+<p align="center">
+  <a href="#Introduction">Introduction</a> •
+  <a href="#Terminology">Terminology</a> •
+  <a href="#API">API</a> •
+  <a href="#Notifications">Notifications</a> •
+  <a href="#Docker-Security">Docker Security</a> •
+  <a href="#related">Related</a> •
+  <a href="#Authors">Authors</a>
+</p>
 
-
-Introduction
+## Introduction
 The key benefit of Docker is that it allows users to package an application with all of its dependencies into a standardized unit for software development. Unlike virtual machines, containers do not have the high overhead and hence enable more efficient usage of the underlying system and resources.
 We are to use virtual machines (VMs) to run software applications. VMs run applications inside a guest Operating System, which runs on virtual hardware powered by the server’s host OS.
 Containers take a different approach by leveraging the low level mechanics of the host operating system, containers provide most of the isolation of virtual machines at a fraction of the computing power.
 Please refer to https://www.docker.com/get-started
 
-Terminology
+## Terminology
 Let´s clarify some terminology that is used in the Docker ecosystem: 
 Images - The blueprints of our application which form the basis of containers. In the demo below, we use  the docker build command to create an image.
 Containers - Created from Docker images and run the actual application. You create a container usually using docker run command. In the demo below, we are using Cloud Run for this. 
@@ -16,7 +24,7 @@ Docker Client - The command line tool that allows the user to interact with the 
 Docker Hub - A registry of Docker images. You can think of the registry as a directory of all available Docker images. https://hub.docker.com  
 Docker registry - A Docker registry allows you to share your custom base images within your organization, keeping a consistent, private, and centralized source of truth for the building blocks of your architecture. In the demo, we use the Google Cloud container registry.
 
-Dockerfile
+### Dockerfile
 A Dockerfile is a simple text-file that contains a list of commands that the Docker client calls while creating an image. It is a simple way to automate the image creation process. 
 To start, create a new blank file in your text editor and save it in your working directory. 
 Let's use the Dockerfile from the demo below. 
@@ -47,7 +55,7 @@ Google Cloud container registry
 Before you can push or pull images, you must configure Docker to use the gcloud command-line tool to authenticate requests to Container Registry. To do so, run the following command (you are only required to do this once):
 gcloud auth configure-docker
 
-Build a docker image
+## Build a docker image
 Create a directory to store your docker image files.
 mkdir helloworld-nodejs && cd helloworkd-nodejs
 
@@ -131,7 +139,7 @@ Google Cloud provides a mechanism for scanning your images when they are pushed 
 Please check the GCP Console for further details. 
 
 
-Docker on AWS
+## Docker on AWS
 There are several ways to run Docker containers on AWS such as EKS, ECS and AWS Elasticbeanstalk. 
 In this demo, we will be focussing on AWS Elasticbeanstalk. 
 Docker Hub
@@ -159,7 +167,7 @@ Your image is pushed to the repository.
 
 Now that your image is online, anyone who has docker installed can play with your app by typing just a single command.
 
-AWS Elasticbeanstalk
+### AWS Elasticbeanstalk
 AWS Elastic Beanstalk is a PaaS (Platform as a Service) offered by AWS. It is similar to Heroku and Google App Engine. 
 We are going to deploy a new application using our Hello World Docker image. 
 
