@@ -206,6 +206,7 @@ It takes some time to set up your application.
 
 
 Once the application is OK, you can click on the URL and browse your app.
+![](/screenshots/EB-docker-app.png)
 
 
 The "Hello World" message is displayed.
